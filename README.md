@@ -7,6 +7,7 @@
 #### Суулгах:
 
 [Nodejs](https://nodejs.org/en/) /You’ll need Node.js version 10.13 or later./ Recommended хувилбар суулгах
+
 [Yarn](https://yarnpkg.com/getting-started/install)
 
 #### 1. Project clone хийж авах
