@@ -4,17 +4,16 @@
 
 # Орчин бэлдэх
 
-## /Mac OS/ Суулгах:
+#### Суулгах:
 
-        Homebrew
-        Nodejs
-        Yarn
+    [Nodejs](https://nodejs.org/en/)  /You’ll need Node.js version 10.13 or later./ Recommended хувилбар суулгах
+    [Yarn](https://yarnpkg.com/getting-started/install)
 
-## 1. Project clone хийж авах
+#### 1. Project clone хийж авах
 
 `git@gitlab.com:nmma/gerege/gerege-wordpress.git` project-ийг clone хийж авна.
 
-## 2. Веб шинээр хийж байгаа бол шинээр branch үүсгэнэ.
+#### 2. Веб шинээр хийж байгаа бол шинээр branch үүсгэнэ.
 
 `git checkout -b [branch-name]`
 
