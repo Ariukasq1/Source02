@@ -5,34 +5,38 @@ import Error from "next/error";
 import Layout from "../components/layouts/Layout";
 import { getData } from "../utils";
 
-function Page({ page, loading }) {
-  if (!page) {
+function Post({ post, loading }) {
+  if (!post) {
     return <Error statusCode={404} />;
   }
 
   return (
     <Layout
       loading={loading}
-      title={page.title.rendered}
-      image={getData(page._embedded, "image") || ""}
+      title={post.title.rendered}
+      image={getData(post._embedded, "image") || ""}
     >
-      <h1>{page.title.rendered}</h1>
-      <div dangerouslySetInnerHTML={{ __html: page.content.rendered }} />
+      <div className=" my-50">
+        <h2>{post.title.rendered}</h2>
+        <img src={getData(post._embedded, "image")} />
+        <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+      </div>
     </Layout>
   );
 }
 
-Page.getInitialProps = async (ctx) => {
+Post.getInitialProps = async (ctx) => {
   const slug = ctx.query.slug;
   const wp = new WPAPI({ endpoint: config(ctx).apiUrl });
-  const page = await wp
-    .pages()
+  const post = await wp
+    .posts()
     .slug(slug)
     .embed()
     .then((data) => {
       return data[0];
     });
-  return { page: page, loading: true };
+
+  return { post: post, loading: true };
 };
 
-export default Page;
+export default Post;
