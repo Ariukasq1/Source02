@@ -23,7 +23,7 @@
 
 #### 3. Тухайн project-d хэрэгтэй package-уудыг суулгах:
 
-![(http://gerege.agency/media/gerege/content/Screen_Shot_2022-01-27_at_18.03.07.png)]
+![image](http://gerege.agency/media/gerege/content/Screen_Shot_2022-01-27_at_18.03.07.png)
 
 `cd src`
 
