@@ -39,6 +39,8 @@
 
 # Frontend structure
 
+![image](http://gerege.agency/media/gerege/content/Screen_Shot_2022-01-27_at_18.12.18.png)
+
 1. **Components** - component-уудаа зохион байгуулна.
 
 2. **Locales** - Хэрвээ олон хэлтэй веб хийж байгаа бол тухайн хэл бүрийн орчуулгын json file-ууд энд байна.
@@ -48,6 +50,8 @@
 4. **Public** - img, css гэх мэт файлууд байна
 
 # Data fetch хийх
+
+![image](http://gerege.agency/media/gerege/content/Screen_Shot_2022-01-27_at_18.09.56.png)
 
 Жишээ болгоод Page-ийн датаг хэрхэн авахыг харуулъя.
 
