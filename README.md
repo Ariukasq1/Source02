@@ -23,7 +23,10 @@
 
 #### 3. Тухайн project-d хэрэгтэй package-уудыг суулгах:
 
+![(http://gerege.agency/media/gerege/content/Screen_Shot_2022-01-27_at_18.03.07.png)]
+
 `cd src`
+
 `yarn install`
 
 #### 4. project-оо ажлуулах:
@@ -47,8 +50,11 @@
 # Data fetch хийх
 
 Жишээ болгоод Page-ийн датаг хэрхэн авахыг харуулъя.
+
 **getInitialProps** нь data-г Server side rendering хийж авна.
+
 **Wpapi** - wp REST api - с дата авахад хөнгөвчилж өгсөн package.
+
 Тухайн page, category, post-г slug-р нь барьж авна.
 
 # Хэл
@@ -72,7 +78,7 @@
 - https://ant.design
 - https://rsuitejs.com
 - https://react-bootstrap.github.io
-  …
+- …
 
 # Git ашиглах
 
@@ -91,6 +97,6 @@ https://github.com/joshnh/Git-Commands
 
 - **Scss** (https://sass-lang.com/) ашиглаж css бичвэл илүү цэгцтэй, хялбар, үр дүнтэйгээр дизайнаа хийх боломжтой. Variables, mixins, nesting… боломжуудыг ашиглах.
 - **Styled component** (https://styled-components.com/) ашиглаж болно
-  …
+
   Yarn add sass
   Yarn add next-sass
