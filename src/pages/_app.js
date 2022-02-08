@@ -1,4 +1,5 @@
 import React from "react";
+import App from "next/app";
 import "../public/styles/style.min.css";
 import "../public/styles/fontawesome/css/all.min.css";
 import Router from "next/router";
@@ -6,6 +7,10 @@ import NProgress from "nprogress";
 import Config, { fetcher } from "../config";
 import WPAPI from "wpapi";
 import Layout from "../components/layouts/Layout";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "slick-carousel/slick/slick.css";
+import "antd/dist/antd.css";
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
@@ -20,6 +25,12 @@ Router.events.on("routeChangeComplete", () => {
 Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps, mainMenu, topMenu, contact }) {
+  React.useEffect(() => {
+    AOS.init({ duration: 800 });
+    AOS.init({ disable: "mobile" });
+    AOS.refresh();
+  }, []);
+
   return (
     <Layout mainMenu={mainMenu} topMenu={topMenu} contact={contact}>
       <Component {...pageProps} />
@@ -27,9 +38,13 @@ function MyApp({ Component, pageProps, mainMenu, topMenu, contact }) {
   );
 }
 
-MyApp.getInitialProps = async () => {
+MyApp.getInitialProps = async (appContext) => {
+  const appProps = await App.getInitialProps(appContext);
+
   const mainMenu = await fetcher(`${Config.menuUrl}/nav-menu`);
+
   const topMenu = await fetcher(`${Config.menuUrl}/nav-menu-top`);
+
   const contact = await wp
     .posts()
     .categories()
@@ -38,6 +53,7 @@ MyApp.getInitialProps = async () => {
     .then((data) => data[0]);
 
   return {
+    ...appProps,
     mainMenu,
     topMenu,
     contact,

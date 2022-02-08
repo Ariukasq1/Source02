@@ -4,20 +4,12 @@ import Config from "../config";
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
-export default function Index({ sliders }) {
+export default function Index({}) {
   return <div className="page"></div>;
 }
 
-export async function getStaticProps() {
-  const sliderCat = await wp
-    .categories()
-    .slug("slider")
-    .embed()
-    .then((data) => data[0]);
-
-  const sliders = await wp.posts().categories(sliderCat.id).embed();
-
+export async function getStaticProps(context) {
   return {
-    props: { sliders },
+    props: {},
   };
 }
