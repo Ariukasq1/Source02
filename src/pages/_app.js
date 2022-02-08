@@ -9,7 +9,6 @@ import WPAPI from "wpapi";
 import Layout from "../components/layouts/Layout";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "slick-carousel/slick/slick.css";
 import "antd/dist/antd.css";
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });

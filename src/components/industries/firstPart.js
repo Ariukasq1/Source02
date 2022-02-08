@@ -3,18 +3,19 @@ import { Row, Col } from "antd";
 import { getData, __ } from "../../utils";
 import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
+import Image from "next/image";
 
 const FirstPart = ({ data }) => {
   return (
     <div className="firstPart">
-      <div className="page-title">Industries</div>
+      <div className="page-title">{__("Industries")}</div>
       <Row className="industries">
         {data
           .slice(0)
           .reverse()
           .map((post, ind) => {
             const { title, excerpt, slug, _embedded, id } = post || {};
-
+            const image = getData(_embedded, "image");
             return (
               <Col
                 span={6}
@@ -43,7 +44,14 @@ const FirstPart = ({ data }) => {
                 </Link>
 
                 <div className="industries-image">
-                  <img src={getData(_embedded, "image")} />
+                  <Image
+                    loader={() => image}
+                    src={image}
+                    alt="pet"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
                 </div>
               </Col>
             );

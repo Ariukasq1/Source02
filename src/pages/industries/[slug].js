@@ -5,7 +5,6 @@ import Config from "../../config";
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
 export default function IndustriesDetail({ post }) {
-  console.log(post, "---");
   return <div className="page"></div>;
 }
 
@@ -40,7 +39,6 @@ export async function getStaticPaths() {
       params: {
         slug: post.slug,
       },
-      content: { ...post },
     };
   });
 
