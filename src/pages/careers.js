@@ -3,7 +3,7 @@ import WPAPI from "wpapi";
 import Config, { fetcher } from "../config";
 import Layout from "../components/layouts/Layout";
 
-export default function About({ mainMenu, topMenu, contact }) {
+export default function Careers({ mainMenu, topMenu, contact }) {
   return (
     <Layout mainMenu={mainMenu} topMenu={topMenu} contact={contact}>
       <div className="page"></div>

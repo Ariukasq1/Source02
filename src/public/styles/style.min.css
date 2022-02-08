@@ -244,6 +244,10 @@ hr {
   position: relative;
 }
 
+.page {
+  margin-top: 114px;
+}
+
 .main-header .logo img {
   width: 120px;
 }
