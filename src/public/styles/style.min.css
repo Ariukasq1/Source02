@@ -244,9 +244,12 @@ hr {
   position: relative;
 }
 
-.page {
-  padding-top: 114px;
-  height: 100vh;
+.fp-tableCell {
+  vertical-align: bottom !important;
+}
+.fp-tableCell > div,
+.fp-tableCell footer {
+  height: calc(100vh - 114px);
 }
 
 .main-header {
@@ -300,13 +303,7 @@ hr {
 }
 
 footer {
-  background: #eee;
-}
-footer .copyright {
-  opacity: 0.9;
-}
-footer .copyright img {
-  width: 110px;
+  background: #262626;
 }
 
 @media only screen and (min-width: 961px) {

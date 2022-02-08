@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps, mainMenu, topMenu, contact }) {
   }, []);
 
   return (
-    <Layout mainMenu={mainMenu} topMenu={topMenu} contact={contact}>
+    <Layout mainMenu={mainMenu} topMenu={topMenu}>
       <Component {...pageProps} />
     </Layout>
   );
@@ -45,18 +45,10 @@ MyApp.getInitialProps = async (appContext) => {
 
   const topMenu = await fetcher(`${Config.menuUrl}/nav-menu-top`);
 
-  const contact = await wp
-    .posts()
-    .categories()
-    .slug(`contact`)
-    .embed()
-    .then((data) => data[0]);
-
   return {
     ...appProps,
     mainMenu,
     topMenu,
-    contact,
   };
 };
 

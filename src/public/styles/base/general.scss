@@ -249,7 +249,10 @@ hr {
   position: relative;
 }
 
-.page {
-  padding-top: 114px;
-  height: 100vh;
+.fp-tableCell {
+  vertical-align: bottom !important;
+  > div,
+  footer {
+    height: calc(100vh - 114px);
+  }
 }

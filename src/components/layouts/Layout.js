@@ -5,7 +5,7 @@ import Menu from "./menu";
 
 class Layout extends React.Component {
   render() {
-    const { children, title, image, mainMenu, topMenu, contact } = this.props;
+    const { children, title, image, mainMenu, topMenu } = this.props;
 
     return (
       <>
@@ -14,7 +14,6 @@ class Layout extends React.Component {
           <Menu mainMenu={mainMenu} topMenu={topMenu} />
           {children}
         </main>
-        <Footer />
       </>
     );
   }
