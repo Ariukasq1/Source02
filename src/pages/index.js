@@ -8,33 +8,31 @@ const wp = new WPAPI({ endpoint: Config.apiUrl });
 
 export default function Index({ contact }) {
   return (
-    <div className="page">
-      <Fullpage
-        children={
-          <div id="fullpage">
-            <div className="section">
-              <div></div>
-            </div>
-            <div className="section">
-              <div></div>
-            </div>
-            <div className="section">
-              <div></div>
-            </div>
-            <div className="section">
-              <div></div>
-            </div>
-            <div className="section">
-              <Footer contact={contact} />
-            </div>
+    <Fullpage
+      children={
+        <div id="fullpage">
+          <div className="section">
+            <div></div>
           </div>
-        }
-      />
-    </div>
+          <div className="section">
+            <div></div>
+          </div>
+          <div className="section">
+            <div></div>
+          </div>
+          <div className="section">
+            <div></div>
+          </div>
+          <div className="section">
+            <Footer contact={contact} />
+          </div>
+        </div>
+      }
+    />
   );
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const contact = await wp
     .posts()
     .categories()

@@ -256,3 +256,55 @@ hr {
     height: calc(100vh - 114px);
   }
 }
+
+.page {
+  height: 100vh;
+  padding-top: 114px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+.continue-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1rem;
+  p {
+    font-size: 1rem;
+  }
+}
+
+.continue-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 20px;
+  --text-opacity: 1;
+  color: #000;
+  font-weight: 100;
+  color: rgba(0, 0, 0, var(--text-opacity));
+  margin-bottom: 1rem;
+}
+
+.read-more-detail {
+  background: linear-gradient(90deg, #8da0cd 2%, #0053a0 35%);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 3s ease;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1rem;
+  color: #004a8f;
+}
