@@ -12,17 +12,17 @@ label,
 input,
 textarea,
 li {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
   margin: 0;
   color: #2d343e;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   word-wrap: break-word;
   font-kerning: normal;
   line-height: 1.75;
@@ -245,11 +245,55 @@ hr {
 }
 
 .page {
-  margin-top: 114px;
+  height: calc(100vh - 114px);
+  padding-top: 114px;
 }
 
-.main-header .logo img {
-  width: 120px;
+.main-header {
+  border-bottom: 2px solid #e2e8f0;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  z-index: 999;
+  background-color: #fff;
+  justify-content: space-between;
+}
+.main-header a {
+  line-height: 0;
+  font-weight: 600;
+  color: #00498e;
+  font-size: 1rem;
+}
+.main-header .logo {
+  width: 6rem;
+  object-fit: contain;
+  object-position: center;
+  cursor: pointer;
+}
+.main-header .menus {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.main-header .menus .topMenu {
+  display: flex;
+  justify-content: flex-end;
+}
+.main-header .menus .topMenu .topMenuList a {
+  padding: 0 1rem;
+  border-right: 1px solid #00498e;
+}
+.main-header .menus .topMenu .topMenuList a:last-child {
+  border: none;
+}
+.main-header .menus .mainMenu .mainMenuList a {
+  padding: 0 1rem;
+}
+.main-header .menus .mainMenu .mainMenuList a:last-child {
+  border-right: 1px solid #00498e;
 }
 
 footer {
