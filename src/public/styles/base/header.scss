@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .main-menu {
   width: 100%;
   display: flex;
@@ -5,5 +6,66 @@
 
   li {
     margin-right: 2rem;
+=======
+.main-header {
+  border-bottom: 2px solid #e2e8f0;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  z-index: 999;
+  background-color: #fff;
+  justify-content: space-between;
+
+  a {
+    line-height: 0;
+    font-weight: 600;
+    color: #00498e;
+    font-size: 1rem;
+    &:hover {
+      color: #5d7db8;
+    }
+>>>>>>> f88cf0b68111189bf736632f48cd72b5b727bbd5
+  }
+
+  .logo {
+    width: 6rem;
+    object-fit: contain;
+    object-position: center;
+    cursor: pointer;
+  }
+
+  .menus {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .topMenu {
+      display: flex;
+      justify-content: flex-end;
+      .topMenuList {
+        a {
+          padding: 0 1rem;
+          border-right: 1px solid #00498e;
+
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+    }
+
+    .mainMenu {
+      .mainMenuList {
+        a {
+          padding: 0 1rem;
+
+          &:last-child {
+            border-right: 1px solid #00498e;
+          }
+        }
+      }
+    }
   }
 }

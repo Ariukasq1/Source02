@@ -1,3 +1,5 @@
+import T from "i18n-react";
+
 export const getData = (object, type) => {
   switch (type) {
     case "categories":
@@ -32,6 +34,7 @@ export const prefixer = (url) => {
   return `/${url}`;
 };
 
+<<<<<<< HEAD
 export const getLangParam = () =>
   typeof window !== "undefined" && window.location.href.indexOf("=en") > -1
     ? "en"
@@ -43,4 +46,14 @@ export const setUrl = (url) => {
   }
 
   return null;
+=======
+export const __ = (key, options) => {
+  const translation = T.translate(key, options);
+
+  if (!translation) {
+    return "";
+  }
+
+  return translation.toString();
+>>>>>>> f88cf0b68111189bf736632f48cd72b5b727bbd5
 };

@@ -10,11 +10,20 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@fullpage/react-fullpage": "^0.1.19",
     "@zeit/next-css": "^1.0.1",
+    "antd": "^4.18.6",
+    "aos": "^3.0.0-beta.6",
     "axios": "^0.19.2",
     "express": "^4.17.1",
+<<<<<<< HEAD
+=======
+    "google-map-react": "^1.1.7",
+    "i18n-react": "^0.7.0",
+>>>>>>> f88cf0b68111189bf736632f48cd72b5b727bbd5
     "moment": "^2.24.0",
-    "next": "^9.4.2",
+    "next": "^12.0.10",
     "next-routes": "^1.4.2",
     "nprogress": "^0.2.0",
     "react": "^16.13.1",
