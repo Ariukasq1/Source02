@@ -315,3 +315,69 @@ hr {
   font-size: 1rem;
   color: #004a8f;
 }
+
+.blue-title {
+  --text-opacity: 1;
+  color: rgba(0, 73, 142, var(--text-opacity));
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.overlay-image {
+  &:hover {
+    &:after {
+      height: 100%;
+    }
+    .overlay-text {
+      transform: translateY(-50%);
+    }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    transition: 0.5s;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+}
+
+.overlay-text {
+  position: absolute;
+  margin: 0 30px;
+  bottom: 30px;
+  color: #fff;
+  z-index: 3;
+  transition: 0.5s;
+  padding-bottom: 30px;
+  font-weight: 500;
+  font-size: 1rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 1px;
+    background-color: #fff;
+    bottom: 0;
+  }
+
+  .overlay-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+}

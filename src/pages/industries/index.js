@@ -23,7 +23,6 @@ export async function getStaticProps() {
   const data = await wp
     .posts()
     .categories((catId || {}).id)
-    .perPage(100)
     .embed();
 
   return {

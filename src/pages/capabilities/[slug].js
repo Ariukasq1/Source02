@@ -3,6 +3,7 @@ import WPAPI from "wpapi";
 import Config from "../../config";
 import Fullpage from "../../components/Fullpage";
 import FirstPart from "../../components/industries/firstPart";
+import SecondPart from "../../components/industries/secondPart";
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
@@ -16,7 +17,9 @@ export default function CapabilitiesDetail({ post, data }) {
               <FirstPart data={data} parent="capabilities" />
             </div>
           </div>
-          <div className="section"></div>
+          <div className="section">
+            <SecondPart post={post} />
+          </div>
           <div className="section"></div>
           <div className="section"></div>
           <div className="section"></div>

@@ -4,19 +4,24 @@ import Config from "../config";
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
-export default function Contact({ contact }) {
+export default function Careers({ data }) {
   return <div className="page"></div>;
 }
 
 export async function getStaticProps() {
-  const contact = await wp
-    .posts()
+  const catId = await wp
     .categories()
-    .slug(`contact`)
+    .slug(`careers`)
     .embed()
     .then((data) => data[0]);
 
+  const data = await wp
+    .posts()
+    .categories((catId || {}).id)
+    .perPage(100)
+    .embed();
+
   return {
-    props: { contact },
+    props: { data },
   };
 }

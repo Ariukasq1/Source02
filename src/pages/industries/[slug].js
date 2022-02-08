@@ -3,6 +3,8 @@ import WPAPI from "wpapi";
 import Config from "../../config";
 import Fullpage from "../../components/Fullpage";
 import FirstPart from "../../components/industries/firstPart";
+import SecondPart from "../../components/industries/secondPart";
+import FactSection from "../../components/industries/thirdPart";
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
@@ -16,8 +18,12 @@ export default function IndustriesDetail({ post, data }) {
               <FirstPart data={data} parent="industries" />
             </div>
           </div>
-          <div className="section"></div>
-          <div className="section"></div>
+          <div className="section">
+            <SecondPart post={post} />
+          </div>
+          <div className="section">
+            <FactSection post={post} />
+          </div>
           <div className="section"></div>
           <div className="section"></div>
         </div>
@@ -46,8 +52,31 @@ export async function getStaticProps(context) {
     .categories((catId || {}).id)
     .embed();
 
+  const brandsID = await wp
+    .categories()
+    .slug(`brands`)
+    .embed()
+    .then((data) => data[0]);
+
+  const brands = await wp
+    .posts()
+    .categories((brandsID || {}).id)
+    .perPage(20)
+    .embed();
+
+  const relID = await wp
+    .categories()
+    .slug(`capabilities`)
+    .embed()
+    .then((data) => data[0]);
+
+  const relationsPosts = await wp
+    .posts()
+    .categories((relID || {}).id)
+    .embed();
+
   return {
-    props: { post, data },
+    props: { post, data, brands, relationsPosts },
   };
 }
 
