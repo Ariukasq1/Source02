@@ -1,29 +1,23 @@
 import React from "react";
 import WPAPI from "wpapi";
-import Config, { fetcher } from "../config";
-import Layout from "../components/layouts/Layout";
+import Config from "../config";
 
-export default function Index({ mainMenu, topMenu, contact }) {
-  return (
-    <Layout mainMenu={mainMenu} topMenu={topMenu} contact={contact}>
-      <div className="page"></div>
-    </Layout>
-  );
+const wp = new WPAPI({ endpoint: Config.apiUrl });
+
+export default function Index({ sliders }) {
+  return <div className="page"></div>;
 }
 
 export async function getStaticProps() {
-  const wp = new WPAPI({ endpoint: Config.apiUrl });
-
-  const mainMenu = await fetcher(`${Config.apiUrl}/menus/v1/menus/nav-menu`);
-  const topMenu = await fetcher(`${Config.apiUrl}/menus/v1/menus/nav-menu-top`);
-  const contact = await wp
-    .posts()
+  const sliderCat = await wp
     .categories()
-    .slug(`contact`)
+    .slug("slider")
     .embed()
     .then((data) => data[0]);
 
+  const sliders = await wp.posts().categories(sliderCat.id).embed();
+
   return {
-    props: { mainMenu, topMenu, contact },
+    props: { sliders },
   };
 }
