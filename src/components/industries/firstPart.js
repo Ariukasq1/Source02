@@ -5,16 +5,16 @@ import Link from "next/link";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import Image from "next/image";
 
-const FirstPart = ({ data }) => {
+const FirstPart = ({ data, parent }) => {
   return (
     <div className="firstPart">
-      <div className="page-title">{__("Industries")}</div>
+      <div className="page-title">{__(`${parent}`)}</div>
       <Row className="industries">
         {data
           .slice(0)
           .reverse()
           .map((post, ind) => {
-            const { title, excerpt, slug, _embedded, id } = post || {};
+            const { title, excerpt, slug, _embedded } = post || {};
             const image = getData(_embedded, "image");
             return (
               <Col
@@ -37,7 +37,7 @@ const FirstPart = ({ data }) => {
                   dangerouslySetInnerHTML={{ __html: excerpt.rendered }}
                 />
 
-                <Link href={`/industries/${slug}`}>
+                <Link href={`/${parent}/${slug}`}>
                   <a className="read-more-detail">
                     {__("Read more")} <ArrowRightOutlined />
                   </a>

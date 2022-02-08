@@ -5,10 +5,10 @@ import Config from "../../config";
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
-export default function Industries({ data }) {
+export default function Capabilities({ data }) {
   return (
     <div className="page">
-      <FirstPart data={data} parent="industries" />
+      <FirstPart data={data} parent="capabilities" />
     </div>
   );
 }
@@ -16,7 +16,7 @@ export default function Industries({ data }) {
 export async function getStaticProps() {
   const catId = await wp
     .categories()
-    .slug(`industries`)
+    .slug(`capabilities`)
     .embed()
     .then((data) => data[0]);
 

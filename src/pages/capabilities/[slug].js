@@ -6,14 +6,14 @@ import FirstPart from "../../components/industries/firstPart";
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
-export default function IndustriesDetail({ post, data }) {
+export default function CapabilitiesDetail({ post, data }) {
   return (
     <Fullpage
       children={
         <div id="fullpage">
           <div className="section">
             <div className="container">
-              <FirstPart data={data} parent="industries" />
+              <FirstPart data={data} parent="capabilities" />
             </div>
           </div>
           <div className="section"></div>
@@ -37,7 +37,7 @@ export async function getStaticProps(context) {
 
   const catId = await wp
     .categories()
-    .slug(`industries`)
+    .slug(`capabilities`)
     .embed()
     .then((data) => data[0]);
 
@@ -54,7 +54,7 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   const catId = await wp
     .categories()
-    .slug(`industries`)
+    .slug(`capabilities`)
     .embed()
     .then((data) => data[0]);
 
