@@ -3,11 +3,8 @@ import WPAPI from "wpapi";
 import Config, { fetcher } from "../config";
 
 export default function About({ mainMenu, topMenu }) {
-  return (
-    <Layout mainMenu={mainMenu} topMenu={topMenu}>
-      hello
-    </Layout>
-  );
+  console.log(mainMenu, "-------------");
+  return <div>hello</div>;
 }
 
 export async function getStaticProps() {
